@@ -1,20 +1,24 @@
 import React from 'react';
 
+type State = {
+  pressedKey: null
+}
+
 export class App extends React.Component {
-  state= {
+  state: State = {
     pressedKey: null,
   };
 
-  hendleDocumentKeyUp = (event: KeyboardEvent) => {
+  handleDocumentKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.hendleDocumentKeyUp);
+    document.addEventListener('keyup', this.handleDocumentKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.addEventListener('keyup', this.hendleDocumentKeyUp);
+    document.addEventListener('keyup', this.handleDocumentKeyUp);
   }
 
   render(): React.ReactNode {
