@@ -1,8 +1,8 @@
 import React from 'react';
 
 type State = {
-  pressedKey: null
-}
+  pressedKey: null;
+};
 
 export class App extends React.Component {
   state: State = {
@@ -18,7 +18,7 @@ export class App extends React.Component {
   }
 
   componentWillUnmount(): void {
-    document.addEventListener('keyup', this.handleDocumentKeyUp);
+    document.removeEventListener('keyup', this.handleDocumentKeyUp);
   }
 
   render(): React.ReactNode {
